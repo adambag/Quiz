@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Quiz</string>
+    <string name="button_true">Prawda</string>
+    <string name="button_false">Fałsz</string>
+    <string name="button_next">Następne</string>
+
+    <string name="q_projects">Na semestrze 5 jest dużo projektów</string>
+    <string name="q_earth">Ziemia ma około 2 miliardy lat</string>
+    <string name="q_atom">Atom składa się z jądra, w którym znajdują się protony i neutrony, otoczonego przez elektrony krążące po orbitach.</string>
+    <string name="q_mountain">Najwyższą górą na Ziemi jest Mount Everest</string>
+    <string name="q_flat_earth">Ziemia jest płaska</string>
+
+</resources>
