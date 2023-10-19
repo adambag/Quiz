@@ -10,4 +10,6 @@
     <string name="q_mountain">Najwyższą górą na Ziemi jest Mount Everest</string>
     <string name="q_flat_earth">Ziemia jest płaska</string>
 
+    <string name="correct_answer">Poprawna odpoweiedź</string>
+    <string name="incorrect_answer">Błędna odpoweiedź</string>
 </resources>

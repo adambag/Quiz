@@ -1,5 +1,8 @@
 package pl.edu.pb.wi;
 
+
+import static pl.edu.pb.wi.R.id.question_points;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -14,7 +17,12 @@ public class MainActivity extends AppCompatActivity {
     private Button falseButton;
     private Button nextButton;
     private TextView questionTextView;
+    private TextView points;
     private int currentIndex = 0;
+    private int count = 0;
+
+
+    private int pointsScoredOverWholeRun = 0;
 
     private Question[] questions = new Question[]{
             new Question(R.string.q_projects, true),
@@ -33,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         falseButton = findViewById(R.id.false_button);
         nextButton = findViewById(R.id.next_button);
         questionTextView = findViewById(R.id.question_text_view);
+        points = findViewById(R.id.question_points);
+        points.setText("Punkty : " + count);
 
         trueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         int resultMessageId = 0;
         if (userAnswer == correctAnswer) {
             resultMessageId = R.string.correct_answer;
+            count++;
         } else {
             resultMessageId = R.string.incorrect_answer;
         }
