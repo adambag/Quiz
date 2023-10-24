@@ -2,7 +2,6 @@ package pl.edu.pb.wi;
 
 
 import static pl.edu.pb.wi.R.id.question_points;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -17,9 +16,9 @@ public class MainActivity extends AppCompatActivity {
     private Button falseButton;
     private Button nextButton;
     private TextView questionTextView;
-    private TextView points;
+    private TextView pointsTextView;
     private int currentIndex = 0;
-    private int count = 0;
+    private int points = 0;
 
 
     private int pointsScoredOverWholeRun = 0;
@@ -41,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         falseButton = findViewById(R.id.false_button);
         nextButton = findViewById(R.id.next_button);
         questionTextView = findViewById(R.id.question_text_view);
-        points = findViewById(R.id.question_points);
-        points.setText("Punkty : " + count);
+        pointsTextView = findViewById(R.id.question_points);
+        updatePointsDisplay();
 
         trueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,13 +74,19 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkAnswerCorrectness(boolean userAnswer) {
         boolean correctAnswer = questions[currentIndex].isTrueAnswer();
-        int resultMessageId = 0;
         if (userAnswer == correctAnswer) {
-            resultMessageId = R.string.correct_answer;
-            count++;
+            points++; // Zwiększ liczbę punktów za poprawną odpowiedź
+            Toast.makeText(this, R.string.correct_answer, Toast.LENGTH_SHORT).show();
         } else {
-            resultMessageId = R.string.incorrect_answer;
+            Toast.makeText(this, R.string.incorrect_answer, Toast.LENGTH_SHORT).show();
         }
-        Toast.makeText(this, resultMessageId, Toast.LENGTH_SHORT).show();
+
+        // Przechodź do kolejnego pytania
+        currentIndex = (currentIndex + 1) % questions.length;
+        setNextQuestion();
+        updatePointsDisplay();
+    }
+    private void updatePointsDisplay() {
+        pointsTextView.setText("Punkty: " + points);
     }
 }

@@ -38,3 +38,5 @@ c
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 @
 build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d
+\
+,app/src/main/java/pl/edu/pb/wi/Question.java,8\e\8e991c7cc4bccc4ec142caeb98214b24c3007b4a

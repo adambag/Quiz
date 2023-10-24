@@ -38,3 +38,5 @@ A
 app/Question.java,5\6\564599dcd6342d734fd8d07092106fe957ff37da
 C
 settings.gradle.kts,7\4\749edfcc96398253e5b3416184e95c46621da850
+\
+,app/src/main/java/pl/edu/pb/wi/Question.java,8\e\8e991c7cc4bccc4ec142caeb98214b24c3007b4a
